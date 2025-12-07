@@ -1,0 +1,255 @@
+This knowledge base contains facts and rules about customer purchasing behavior, product relationships, and business operations. Use ONLY this information to answer queries about customers, products, and business rules.
+
+CUSTOMER PURCHASE HISTORY
+Alice purchased:
+Laptop
+Mouse
+Warranty plan
+Bob purchased:
+Smartphone
+Phone case
+Carol purchased:
+Tablet
+Stylus
+Cloud storage
+David purchased:
+Laptop
+External monitor
+Emily purchased:
+Smartwatch
+Frank purchased:
+Wireless earbuds
+Charging dock
+
+CUSTOMER LOYALTY STATUS
+Alice: Gold member
+Bob: Silver member
+Carol: Gold member
+David: Bronze member
+Emily: Silver member
+Frank: Bronze member
+
+PRODUCT CATEGORIES
+Electronics:
+Laptop
+Smartphone
+Tablet
+Smartwatch
+Wireless earbuds
+Accessories:
+Mouse
+Phone case
+Stylus
+Charging dock
+External monitor
+Services:
+Warranty plan
+Cloud storage
+
+PRODUCT PRICES (USD)
+Laptop: $1,200
+Smartphone: $800
+Tablet: $600
+Smartwatch: $400
+Wireless earbuds: $150
+Mouse: $30
+Phone case: $25
+Stylus: $80
+Charging dock: $45
+External monitor: $300
+Warranty plan: $200
+Cloud storage: $120
+
+PRODUCT COMPATIBILITY
+Products work well together if they are compatible:
+Laptop is compatible with: Mouse, External monitor, Warranty plan
+Smartphone is compatible with: Phone case, Wireless earbuds
+Tablet is compatible with: Stylus, Cloud storage
+Smartwatch is compatible with: Charging dock
+Wireless earbuds are compatible with: Charging dock
+
+CUSTOMER BUDGET TIERS
+Alice: Premium
+Bob: Mid-range
+Carol: Premium
+David: Mid-range
+Emily: Budget
+Frank: Budget
+
+PURCHASE TIMELINE (by Month)
+January:
+Alice: Laptop, Mouse
+February:
+Alice: Warranty plan
+Bob: Smartphone, Phone case
+March:
+Carol: Tablet, Stylus
+April:
+Carol: Cloud storage
+David: Laptop
+May:
+David: External monitor
+Emily: Smartwatch
+June:
+Frank: Wireless earbuds, Charging dock
+
+PRODUCT STOCK STATUS
+In Stock:
+Laptop
+Smartphone
+Tablet
+Mouse
+Phone case
+Stylus
+Charging dock
+Out of Stock:
+Smartwatch
+Wireless earbuds
+External monitor
+Warranty plan
+Cloud storage
+
+BUSINESS RULES AND DEFINITIONS
+High-Value Customer
+A customer is considered "high-value" if they have Gold loyalty status.
+Discount Eligibility
+Customers are eligible for discounts if they have Gold or Silver loyalty status.
+Cross-Sell Opportunity
+A cross-sell opportunity exists when:
+A customer bought a main product
+There is a compatible product they haven't purchased yet
+That compatible product is in stock
+Upsell Candidate
+A customer is an upsell candidate when:
+Premium tier customers: Can be upsold products over $500 they haven't bought
+Mid-range tier customers: Can be upsold products between $300-$800 they haven't bought
+High Spender
+A customer is a "high spender" if their total purchases exceed $1,000.
+Similar Customers
+Two customers are similar if they bought products from the same category.
+Product Bundle
+Two products form a bundle if they are compatible with each other.
+Repeat Customer
+A customer is a "repeat customer" if they purchased more than 2 items.
+Recent Buyer
+A customer is a recent buyer if they purchased in March, April, May, or June.
+Premium Product
+A product is premium if it costs more than $500.
+Budget Product
+A product is a budget product if it costs less than $100.
+Category Preference
+A customer prefers a category if more than half of their purchases are from that category.
+Churn Risk
+A customer is at churn risk if they:
+Have Bronze loyalty status, AND
+Haven't purchased recently (not in March-June)
+VIP Customer
+A customer is VIP if they are BOTH:
+A Gold loyalty member, AND
+A high spender (spent over $1,000)
+Restock Priority
+A product should be restocked as priority if:
+It's currently out of stock, AND
+It's compatible with products that customers have already purchased
+Customer Value Tier
+High value: VIP customers
+Medium value: High spenders who aren't Gold members
+Low value: Customers who aren't high spenders
+Next Best Action
+The recommended next action for a customer is to recommend products that represent cross-sell opportunities (compatible with their purchases and currently in stock).
+Product Affinity
+Two products have affinity when multiple customers bought both products together, and they are compatible.
+
+
+Did Alice purchase a laptop?
+Is Bob a gold loyalty member?
+What category is a smartphone in?
+Is the tablet in stock?
+How much does a laptop cost?
+Is Carol a loyalty member?
+Are laptop and mouse compatible?
+What is Emily's budget tier?
+Did Frank purchase wireless earbuds?
+What products did Alice purchase?
+Is the warranty plan a service?
+Is David a premium budget tier customer?
+What is the price of a phone case?
+Is the smartwatch out of stock?
+Did Carol buy a stylus?
+What loyalty level is Alice?
+Is cloud storage compatible with tablets?
+What products are accessories?
+Did Bob purchase in February?
+Is the external monitor in stock?
+What is Frank's loyalty status?
+How much does cloud storage cost?
+Is smartphone compatible with phone case?
+What did David purchase?
+Is wireless earbuds an electronics product?
+When did Alice buy the mouse?
+Is Carol in the mid-range budget tier?
+What is the price of a stylus?
+Did Emily purchase a smartwatch?
+Are wireless earbuds and charging dock compatible?
+Is Alice a high-value customer?
+Did Bob buy anything from the electronics category?
+Is David eligible for a discount?
+What cross-sell opportunities exist for Alice?
+Is Carol a high spender?
+Are Alice and Bob similar customers?
+Is the laptop a premium product?
+Is Frank a repeat customer?
+Did Emily purchase recently?
+Is the phone case a budget product?
+What products can be recommended to Bob?
+Is Emily eligible for a discount?
+What upsell opportunities exist for Carol?
+Is David at churn risk?
+Is Alice a VIP customer?
+What products form a bundle with laptop?
+Does Carol prefer the electronics category?
+Is Frank at churn risk?
+What is Bob's customer value tier?
+Are there cross-sell opportunities for David?
+Is the smartphone a premium product?
+Did Alice buy from the accessories category?
+Is the charging dock a budget product?
+What is Alice's customer value tier?
+Are Carol and David similar customers?
+Is Emily a repeat customer?
+What products should be restocked as priority?
+Is Bob a high spender?
+Are there upsell opportunities for Emily?
+What is Carol's next best action?
+Which customers are both high-value and high spenders?
+What electronics products did gold members purchase?
+Which premium products are currently out of stock?
+How many products has each customer purchased?
+Which customers bought products in the same month as Alice?
+What is the average price of products purchased by Carol?
+Which customers are eligible for discounts but are at churn risk?
+What percentage of products are currently in stock?
+Which customers have cross-sell opportunities for accessories?
+What is the total revenue from electronics products?
+Which customers bought compatible products together?
+What is the most expensive product purchased by budget tier customers?
+Which loyalty tiers have the highest average spending?
+How many customers bought from multiple categories?
+Which products have no compatible items?
+What is the conversion rate of cross-sell opportunities?
+Which customers purchased all compatible accessories for their main product?
+What is the distribution of customers across loyalty tiers?
+Which month had the highest purchase volume?
+What products were purchased by VIP customers?
+Which budget tier customers bought premium products?
+What is the ratio of electronics to accessories purchases?
+Which customers have product affinity patterns?
+What is the average loyalty tier value?
+Which product category generates the most revenue?
+How many customers bought items exclusively from one category?
+What is the customer lifetime value ranking?
+Which out-of-stock products have the highest demand based on compatibility?
+What percentage of repeat customers are also high spenders?
+Which customer segments exist and their purchase patterns?
+
+(give me very concise answers only, do not show me your thought process only answers).
