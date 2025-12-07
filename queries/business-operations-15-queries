@@ -1,0 +1,69 @@
+SIMPLE QUERIES (1-5)
+Direct fact lookups from the knowledge base
+Query 1
+Natural Language: Did Alice purchase a laptop?
+ Prolog: purchased(alice, laptop).
+ Expected: true
+Query 2
+Natural Language: Is Bob a gold loyalty member?
+ Prolog: loyalty_member(bob, gold).
+ Expected: false
+Query 3
+Natural Language: What category is a smartphone in?
+ Prolog: category(smartphone, X).
+ Expected: X = electronics
+Query 4
+Natural Language: Is the tablet in stock?
+ Prolog: in_stock(tablet).
+ Expected: true
+Query 5
+Natural Language: How much does a laptop cost?
+ Prolog: price(laptop, X).
+ Expected: X = 1200
+
+COMPLEX QUERIES (6-10)
+Requires applying rules from the knowledge base
+Query 6
+Natural Language: Is Alice a high-value customer?
+ Prolog: high_value_customer(alice).
+ Expected: true (gold member)
+Query 7
+Natural Language: Did Bob buy anything from the electronics category?
+ Prolog: bought_category(bob, electronics).
+ Expected: true (bought smartphone)
+Query 8
+Natural Language: Is David eligible for a discount?
+ Prolog: eligible_for_discount(david).
+ Expected: false (bronze member)
+Query 9
+Natural Language: What cross-sell opportunities exist for Alice?
+ Prolog: cross_sell_opportunity(alice, X).
+ Expected: X = external_monitor
+Query 10
+Natural Language: Is Carol a high spender?
+ Prolog: high_spender(carol).
+ Expected: true (spent 800 total)
+
+MULTI-STEP QUERIES (11-15)
+Requires multiple rule applications and complex logic
+Query 11
+Natural Language: Which customers are both high-value and high spenders?
+ Prolog: high_value_customer(X), high_spender(X).
+ Expected: X = alice; X = carol
+Query 12
+Natural Language: What electronics products did gold members purchase?
+ Prolog: loyalty_member(X, gold), purchased(X, Product), category(Product, electronics).
+ Expected: X = alice, Product = laptop; X = carol, Product = tablet
+Query 13
+Natural Language: Which premium products are currently out of stock?
+ Prolog: premium_product(X), out_of_stock(X).
+ Expected: X = smartwatch
+Query 14
+Natural Language: How many products has each customer purchased?
+ Prolog: findall(P, purchased(Customer, P), Products), length(Products, Count).
+ Expected: alice = 3, bob = 2, carol = 3, david = 2, emily = 1, frank = 2
+Query 15
+Natural Language: Which customers bought products in the same month as Alice?
+ Prolog: purchased_month(alice, _, Month), purchased_month(X, _, Month), X \= alice.
+ Expected: X = bob (february)
+
