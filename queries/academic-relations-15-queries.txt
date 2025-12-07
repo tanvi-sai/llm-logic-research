@@ -1,0 +1,65 @@
+SIMPLE QUERIES (1-5)
+Query 1
+Natural Language: Is Algebra 1 a prerequisite for Algebra 2?
+ Prolog: prerequisite(algebra_1, algebra_2).
+ Expected: true
+Query 2
+Natural Language: Has Sarah completed Precalculus?
+ Prolog: completed(sarah, precalculus).
+ Expected: true
+Query 3
+Natural Language: Is Mike enrolled in Chemistry 1?
+ Prolog: enrolled(mike, chemistry_1).
+ Expected: true
+Query 4
+Natural Language: What department is Calculus 1 in?
+ Prolog: department(calculus_1, X).
+ Expected: X = mathematics
+Query 5
+Natural Language: Is Algorithms an advanced course?
+ Prolog: difficulty(algorithms, advanced).
+ Expected: true
+
+COMPLEX QUERIES (6-10)
+Query 6
+Natural Language: Is Sarah eligible to take Calculus 2?
+ Prolog: eligible(sarah, calculus_2).
+ Expected: false
+Query 7
+Natural Language: Is James an advanced student?
+ Prolog: advanced_student(james).
+ Expected: true
+Query 8
+Natural Language: Are Calculus 1 and Calculus 2 in sequence?
+ Prolog: in_sequence(calculus_1, calculus_2).
+ Expected: true
+Query 9
+Natural Language: Is Algebra 1 an indirect prerequisite for Calculus 1?
+ Prolog: indirect_prerequisite(algebra_1, calculus_1).
+ Expected: true
+Query 10
+Natural Language: Are Biology 2 and Chemistry 2 co-requisites?
+ Prolog: co_requisite(biology_2, chemistry_2).
+ Expected: true
+
+MULTI-STEP QUERIES (11-15)
+Query 11
+Natural Language: Can Sarah take Algorithms?
+ Prolog: eligible(sarah, algorithms).
+ Expected: false
+Query 12
+Natural Language: Are Sarah and James peers in any course?
+ Prolog: peers(sarah, james).
+ Expected: false
+Query 13
+Natural Language: Is anyone overloaded with courses?
+ Prolog: overloaded(X).
+ Expected: false
+Query 14
+Natural Language: What is the prerequisite chain from Algebra 1 to Calculus 2?
+ Prolog: prerequisite_chain(algebra_1, calculus_2, Path).
+ Expected: Path = [algebra_1, algebra_2, precalculus, calculus_1, calculus_2]
+Query 15
+Natural Language: Which students completed Calculus 1 but are not enrolled in Calculus 2?
+ Prolog: completed(X, calculus_1), \+ enrolled(X, calculus_2).
+ Expected: false
