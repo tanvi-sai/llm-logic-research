@@ -1,0 +1,145 @@
+I have an academic course prerequisite system. Please answer my questions using ONLY the facts provided below. Be precise and concise in your answers.
+
+COURSE PREREQUISITES:
+Algebra 1 is a prerequisite for Algebra 2
+Algebra 2 is a prerequisite for Precalculus
+Precalculus is a prerequisite for Calculus 1
+Calculus 1 is a prerequisite for Calculus 2
+Biology 1 is a prerequisite for Biology 2
+Chemistry 1 is a prerequisite for Chemistry 2
+Physics 1 is a prerequisite for Physics 2
+Intro Programming is a prerequisite for Intro CS
+Intro CS is a prerequisite for Data Structures
+Data Structures is a prerequisite for Algorithms
+
+STUDENT ENROLLMENT DATA:
+Sarah:
+Completed courses: Algebra 1, Algebra 2, Precalculus, Biology 1, Intro Programming
+Currently enrolled in: Calculus 1, Biology 2, Intro CS
+Mike:
+Completed courses: Algebra 1
+Currently enrolled in: Algebra 2, Chemistry 1
+Emily:
+Completed courses: Algebra 1, Algebra 2
+Currently enrolled in: Precalculus, Physics 1
+James:
+Completed courses: Algebra 1, Algebra 2, Precalculus, Calculus 1, Intro Programming, Intro CS
+Currently enrolled in: Data Structures, Calculus 2
+Lisa:
+Completed courses: Intro Programming
+Currently enrolled in: Algebra 1, Biology 1
+
+COURSE DEPARTMENTS:
+Mathematics: Algebra 1, Algebra 2, Precalculus, Calculus 1, Calculus 2
+Science: Biology 1, Biology 2, Chemistry 1, Chemistry 2, Physics 1, Physics 2
+Computer Science: Intro Programming, Intro CS, Data Structures, Algorithms
+
+COURSE DIFFICULTY LEVELS:
+Introductory: Algebra 1, Intro Programming, Biology 1, Chemistry 1, Physics 1
+Intermediate: Algebra 2, Precalculus, Intro CS, Biology 2, Chemistry 2, Physics 2
+Advanced: Calculus 1, Calculus 2, Data Structures, Algorithms
+
+ELIGIBILITY RULES:
+A student is eligible for a course if they have completed ALL prerequisites for that course
+A student cannot be eligible for a course they are already enrolled in
+A student cannot be eligible for a course they have already completed
+An "advanced student" is one who has completed at least one advanced-level course
+A "beginner student" is one who has only completed introductory-level courses
+Two students are "peers" if they are enrolled in the same course
+Two courses are "co-requisites" if they are in the same department AND at the same difficulty level
+Courses are "in sequence" if one is a direct or indirect prerequisite of the other
+
+Now I will ask you questions. Please answer based ONLY on the information above. make sure you don't use information from previous chats or ANY previous knowledge at all. 
+
+
+Is Algebra 1 a prerequisite for Algebra 2?
+Has Sarah completed Precalculus?
+Is Mike enrolled in Chemistry 1?
+What department is Calculus 1 in?
+Is Algorithms an advanced course?
+Has Lisa completed Intro Programming?
+Is Biology 2 in the Science department?
+Is Emily enrolled in Physics 1?
+Has James completed Intro CS?
+What courses is Sarah enrolled in?
+Has Mike completed Algebra 1?
+Is Precalculus a prerequisite for Calculus 1?
+What department does Intro CS belong to?
+Is Chemistry 2 an intermediate course?
+Has Emily completed Algebra 2?
+Is James enrolled in Calculus 2?
+What is the difficulty of Biology 1?
+Has Sarah completed Biology 1?
+Is Physics 2 in the Science department?
+What courses has Lisa completed?
+Is Data Structures a Computer Science course?
+Has James completed Calculus 1?
+Is Algebra 1 an introductory course?
+What courses is Mike enrolled in?
+Is Intro CS a prerequisite for Data Structures?
+Has Emily completed Algebra 1?
+What department is Biology 1 in?
+Is Precalculus an intermediate course?
+Is Lisa enrolled in Algebra 1?
+Is Chemistry 1 a prerequisite for Chemistry 2?
+Is Sarah eligible to take Calculus 2?
+Is James an advanced student?
+Are Calculus 1 and Calculus 2 in sequence?
+Is Algebra 1 an indirect prerequisite for Calculus 1?
+Are Biology 2 and Chemistry 2 co-requisites?
+Can Emily enroll in Calculus 1?
+What courses can Mike take next?
+Are Physics 1 and Chemistry 1 co-requisites?
+Is Lisa a beginner student?
+Is Intro Programming an indirect prerequisite for Algorithms?
+Can Lisa enroll in Biology 2?
+Is Mike eligible for Precalculus?
+Are Algebra 1 and Algebra 2 in sequence?
+Is Data Structures in sequence with Algorithms?
+What are the co-requisites for Calculus 1?
+Can James take Algorithms?
+Are Sarah and Emily peers in any course?
+Is Emily an advanced student?
+Are Algebra 2 and Precalculus in sequence?
+Is Precalculus an indirect prerequisite for Calculus 2?
+Are Physics 2 and Chemistry 2 co-requisites?
+Can Sarah take Data Structures?
+Is Mike a beginner student?
+Are Biology 1 and Chemistry 1 co-requisites?
+Is Algebra 2 an indirect prerequisite for Calculus 2?
+Can Lisa take Intro CS?
+Are Mike and Lisa peers in any course?
+Is Sarah an advanced student?
+Are Data Structures and Algorithms in sequence?
+Is Intro CS an indirect prerequisite for Algorithms?
+Can Sarah take Algorithms?
+Are Sarah and James peers in any course?
+Is anyone overloaded with courses?
+What is the prerequisite chain from Algebra 1 to Calculus 2?
+Which students have completed Calculus 1 but are not enrolled in Calculus 2?
+If Sarah completes Calculus 1, what advanced courses could she then take?
+What is the longest prerequisite chain in the Computer Science department?
+Can Mike eventually take Calculus 2 if he completes his current courses?
+What courses must Lisa complete before she can be considered an advanced student?
+If Emily completes Precalculus, how many more courses until she can take Calculus 2?
+Which students are closest to being able to take Algorithms?
+Are there any students enrolled in courses from three different departments?
+What courses would James need to complete to be eligible for all advanced Mathematics courses?
+Which students have completed prerequisites for courses they're not enrolled in?
+What is the total number of prerequisite relationships in the Mathematics department?
+What is the prerequisite chain from Intro Programming to Algorithms?
+Which students have completed all prerequisites for Data Structures but are not enrolled in it?
+How many courses are in the longest prerequisite chain starting from Algebra 1?
+Which students are enrolled in both Science and Mathematics courses?
+What courses can Emily take after completing Precalculus?
+Are there any students who are peers with both Sarah and Mike?
+What is the shortest path for Lisa to become eligible for Calculus 1?
+Which students have completed at least one intermediate course?
+How many prerequisite relationships exist in the Science department?
+If James completes Data Structures, what advanced courses become available to him?
+Which students are taking courses only from one department?
+What is the prerequisite chain from Biology 1 to Biology 2?
+Which students can become advanced students by completing just one more course?
+Are there any pairs of students who are peers in multiple courses?
+What percentage of all courses are advanced level?
+
