@@ -1,0 +1,369 @@
+SIMPLE QUERIES (1-30)
+Direct fact lookups from the knowledge base
+Query 1
+Natural Language: Is Algebra 1 a prerequisite for Algebra 2?
+ Prolog: prerequisite(algebra_1, algebra_2).
+ Expected: true
+Query 2
+Natural Language: Has Sarah completed Precalculus?
+ Prolog: completed(sarah, precalculus).
+ Expected: true
+Query 3
+Natural Language: Is Mike enrolled in Chemistry 1?
+ Prolog: enrolled(mike, chemistry_1).
+ Expected: true
+Query 4
+Natural Language: What department is Calculus 1 in?
+ Prolog: department(calculus_1, X).
+ Expected: X = mathematics
+Query 5
+Natural Language: Is Algorithms an advanced course?
+ Prolog: difficulty(algorithms, advanced).
+ Expected: true
+Query 6
+Natural Language: Has Lisa completed Intro Programming?
+ Prolog: completed(lisa, intro_programming).
+ Expected: true
+Query 7
+Natural Language: Is Biology 2 in the Science department?
+ Prolog: department(biology_2, science).
+ Expected: true
+Query 8
+Natural Language: Is Emily enrolled in Physics 1?
+ Prolog: enrolled(emily, physics_1).
+ Expected: true
+Query 9
+Natural Language: Has James completed Intro CS?
+ Prolog: completed(james, intro_cs).
+ Expected: true
+Query 10
+Natural Language: What courses is Sarah enrolled in?
+ Prolog: enrolled(sarah, X).
+ Expected: X = calculus_1; X = biology_2; X = intro_cs
+Query 11
+Natural Language: Has Mike completed Algebra 1?
+ Prolog: completed(mike, algebra_1).
+ Expected: true
+Query 12
+Natural Language: Is Precalculus a prerequisite for Calculus 1?
+ Prolog: prerequisite(precalculus, calculus_1).
+ Expected: true
+Query 13
+Natural Language: What department does Intro CS belong to?
+ Prolog: department(intro_cs, X).
+ Expected: X = computer_science
+Query 14
+Natural Language: Is Chemistry 2 an intermediate course?
+ Prolog: difficulty(chemistry_2, intermediate).
+ Expected: true
+Query 15
+Natural Language: Has Emily completed Algebra 2?
+ Prolog: completed(emily, algebra_2).
+ Expected: true
+Query 16
+Natural Language: Is James enrolled in Calculus 2?
+ Prolog: enrolled(james, calculus_2).
+ Expected: true
+Query 17
+Natural Language: What is the difficulty of Biology 1?
+ Prolog: difficulty(biology_1, X).
+ Expected: X = introductory
+Query 18
+Natural Language: Has Sarah completed Biology 1?
+ Prolog: completed(sarah, biology_1).
+ Expected: true
+Query 19
+Natural Language: Is Physics 2 in the Science department?
+ Prolog: department(physics_2, science).
+ Expected: true
+Query 20
+Natural Language: What courses has Lisa completed?
+ Prolog: completed(lisa, X).
+ Expected: X = intro_programming
+Query 21
+Natural Language: Is Data Structures a Computer Science course?
+ Prolog: department(data_structures, computer_science).
+ Expected: true
+Query 22
+Natural Language: Has James completed Calculus 1?
+ Prolog: completed(james, calculus_1).
+ Expected: true
+Query 23
+Natural Language: Is Algebra 1 an introductory course?
+ Prolog: difficulty(algebra_1, introductory).
+ Expected: true
+Query 24
+Natural Language: What courses is Mike enrolled in?
+ Prolog: enrolled(mike, X).
+ Expected: X = algebra_2; X = chemistry_1
+Query 25
+Natural Language: Is Intro CS a prerequisite for Data Structures?
+ Prolog: prerequisite(intro_cs, data_structures).
+ Expected: true
+Query 26
+Natural Language: Has Emily completed Algebra 1?
+ Prolog: completed(emily, algebra_1).
+ Expected: true
+Query 27
+Natural Language: What department is Biology 1 in?
+ Prolog: department(biology_1, X).
+ Expected: X = science
+Query 28
+Natural Language: Is Precalculus an intermediate course?
+ Prolog: difficulty(precalculus, intermediate).
+ Expected: true
+Query 29
+Natural Language: Is Lisa enrolled in Algebra 1?
+ Prolog: enrolled(lisa, algebra_1).
+ Expected: true
+Query 30
+Natural Language: Is Chemistry 1 a prerequisite for Chemistry 2?
+ Prolog: prerequisite(chemistry_1, chemistry_2).
+ Expected: true
+
+
+COMPLEX QUERIES (31-60)
+Requires applying rules from the knowledge base
+Query 31
+Natural Language: Is Sarah eligible to take Calculus 2?
+ Prolog: eligible(sarah, calculus_2).
+ Expected: false (she's currently taking Calculus 1, hasn't completed it)
+Query 32
+Natural Language: Is James an advanced student?
+ Prolog: advanced_student(james).
+ Expected: true (completed Calculus 1)
+Query 33
+Natural Language: Are Calculus 1 and Calculus 2 in sequence?
+ Prolog: in_sequence(calculus_1, calculus_2).
+ Expected: true
+Query 34
+Natural Language: Is Algebra 1 an indirect prerequisite for Calculus 1?
+ Prolog: indirect_prerequisite(algebra_1, calculus_1).
+ Expected: true
+Query 35
+Natural Language: Are Biology 2 and Chemistry 2 co-requisites?
+ Prolog: co_requisite(biology_2, chemistry_2).
+ Expected: true (both intermediate Science courses)
+Query 36
+Natural Language: Can Emily enroll in Calculus 1?
+ Prolog: eligible(emily, calculus_1).
+ Expected: false (she's currently taking Precalculus, hasn't completed it)
+Query 37
+Natural Language: What courses can Mike take next?
+ Prolog: next_course(mike, X).
+ Expected: X = precalculus (he completed Algebra 1 and is taking Algebra 2)
+Query 38
+Natural Language: Are Physics 1 and Chemistry 1 co-requisites?
+ Prolog: co_requisite(physics_1, chemistry_1).
+ Expected: true (both introductory Science courses)
+Query 39
+Natural Language: Is Lisa a beginner student?
+ Prolog: beginner_student(lisa).
+ Expected: true (only completed Intro Programming, which is introductory)
+Query 40
+Natural Language: Is Intro Programming an indirect prerequisite for Algorithms?
+ Prolog: indirect_prerequisite(intro_programming, algorithms).
+ Expected: true (Intro Programming → Intro CS → Data Structures → Algorithms)
+Query 41
+Natural Language: Can Lisa enroll in Biology 2?
+ Prolog: eligible(lisa, biology_2).
+ Expected: false (she's currently taking Biology 1, hasn't completed it)
+Query 42
+Natural Language: Is Mike eligible for Precalculus?
+ Prolog: eligible(mike, precalculus).
+ Expected: false (he's currently taking Algebra 2, hasn't completed it)
+Query 43
+Natural Language: Are Algebra 1 and Algebra 2 in sequence?
+ Prolog: in_sequence(algebra_1, algebra_2).
+ Expected: true
+Query 44
+Natural Language: Is Data Structures in sequence with Algorithms?
+ Prolog: in_sequence(data_structures, algorithms).
+ Expected: true
+Query 45
+Natural Language: What are the co-requisites for Calculus 1?
+ Prolog: co_requisite(calculus_1, X).
+ Expected: X = calculus_2 (both advanced Mathematics courses)
+Query 46
+Natural Language: Can James take Algorithms?
+ Prolog: eligible(james, algorithms).
+ Expected: false (he's currently taking Data Structures, hasn't completed it)
+Query 47
+Natural Language: Are Sarah and Emily peers in any course?
+ Prolog: peers(sarah, emily).
+ Expected: false
+Query 48
+Natural Language: Is Emily an advanced student?
+ Prolog: advanced_student(emily).
+ Expected: false (hasn't completed any advanced courses)
+Query 49
+Natural Language: Are Algebra 2 and Precalculus in sequence?
+ Prolog: in_sequence(algebra_2, precalculus).
+ Expected: true
+Query 50
+Natural Language: Is Precalculus an indirect prerequisite for Calculus 2?
+ Prolog: indirect_prerequisite(precalculus, calculus_2).
+ Expected: true
+Query 51
+Natural Language: Are Physics 2 and Chemistry 2 co-requisites?
+ Prolog: co_requisite(physics_2, chemistry_2).
+ Expected: true (both intermediate Science courses)
+Query 52
+Natural Language: Can Sarah take Data Structures?
+ Prolog: eligible(sarah, data_structures).
+ Expected: false (she's currently taking Intro CS, hasn't completed it)
+Query 53
+Natural Language: Is Mike a beginner student?
+ Prolog: beginner_student(mike).
+ Expected: true (only completed Algebra 1, which is introductory)
+Query 54
+Natural Language: Are Biology 1 and Chemistry 1 co-requisites?
+ Prolog: co_requisite(biology_1, chemistry_1).
+ Expected: true (both introductory Science courses)
+Query 55
+Natural Language: Is Algebra 2 an indirect prerequisite for Calculus 2?
+ Prolog: indirect_prerequisite(algebra_2, calculus_2).
+ Expected: true
+Query 56
+Natural Language: Can Lisa take Intro CS?
+ Prolog: eligible(lisa, intro_cs).
+ Expected: true (she completed Intro Programming)
+Query 57
+Natural Language: Are Mike and Lisa peers in any course?
+ Prolog: peers(mike, lisa).
+ Expected: false
+Query 58
+Natural Language: Is Sarah an advanced student?
+ Prolog: advanced_student(sarah).
+ Expected: false (she's taking Calculus 1 but hasn't completed it yet)
+Query 59
+Natural Language: Are Data Structures and Algorithms in sequence?
+ Prolog: in_sequence(data_structures, algorithms).
+ Expected: true
+Query 60
+Natural Language: Is Intro CS an indirect prerequisite for Algorithms?
+ Prolog: indirect_prerequisite(intro_cs, algorithms).
+ Expected: true
+
+
+MULTI-STEP QUERIES (61-90)
+Requires multiple rule applications and complex logic
+Query 61
+Natural Language: Can Sarah take Algorithms?
+ Prolog: eligible(sarah, algorithms).
+ Expected: false (needs to complete Data Structures first)
+Query 62
+Natural Language: Are Sarah and James peers in any course?
+ Prolog: peers(sarah, james).
+ Expected: false (they share no courses)
+Query 63
+Natural Language: Is anyone overloaded with courses?
+ Prolog: overloaded(X).
+ Expected: false (no one has more than 3 courses)
+Query 64
+Natural Language: What is the prerequisite chain from Algebra 1 to Calculus 2?
+ Prolog: prerequisite_chain(algebra_1, calculus_2, Path).
+ Expected: Path = [algebra_1, algebra_2, precalculus, calculus_1, calculus_2]
+Query 65
+Natural Language: Which students have completed Calculus 1 but are not enrolled in Calculus 2?
+ Prolog: completed(X, calculus_1), \+ enrolled(X, calculus_2).
+ Expected: false (James completed Calc 1 and IS enrolled in Calc 2)
+Query 66
+Natural Language: If Sarah completes Calculus 1, what advanced courses could she then take?
+ Prolog: completed(sarah, calculus_1), difficulty(Course, advanced), eligible(sarah, Course).
+ Expected: Would need to simulate - potentially Calculus 2, Data Structures
+Query 67
+Natural Language: What is the longest prerequisite chain in the Computer Science department?
+ Prolog: prerequisite_chain(intro_programming, algorithms, Path).
+ Expected: Path = [intro_programming, intro_cs, data_structures, algorithms] (4 courses)
+Query 68
+Natural Language: Can Mike eventually take Calculus 2 if he completes his current courses?
+ Prolog: completed(mike, algebra_2), prerequisite_chain(algebra_2, calculus_2, Path). Expected: Yes (Algebra 2 → Precalculus → Calculus 1 → Calculus 2)
+Query 69
+Natural Language: What courses must Lisa complete before she can be considered an advanced student?
+ Prolog: difficulty(Course, advanced), \+ completed(lisa, Course).
+ Expected: Any advanced course: Calculus 1, Calculus 2, Data Structures, or Algorithms
+Query 70
+Natural Language: If Emily completes Precalculus, how many more courses until she can take Calculus 2?
+ Prolog: prerequisite_chain(precalculus, calculus_2, [_|Rest]), length(Rest, N).
+ Expected: 2 courses (Calculus 1, then Calculus 2)
+Query 71
+Natural Language: Which students are closest to being able to take Algorithms?
+ Prolog: prerequisite_chain(StartCourse, algorithms, Path), completed(Student, StartCourse).
+ Expected: James (he's completed up to Intro CS, needs Data Structures)
+Query 72
+Natural Language: Are there any students enrolled in courses from three different departments?
+ Prolog: Complex multi-department check
+ Expected: Sarah (Math: Calculus 1, Science: Biology 2, CS: Intro CS)
+Query 73
+Natural Language: What courses would James need to complete to be eligible for all advanced Mathematics courses?
+ Prolog: difficulty(Course, advanced), department(Course, mathematics), \+ eligible(james, Course).
+ Expected: None - he's already eligible (completed through Calculus 1, taking Calculus 2)
+Query 74
+Natural Language: Which students have completed prerequisites for courses they're not enrolled in?
+ Prolog: prerequisite(PrereqCourse, Course), completed(Student, PrereqCourse), \+ enrolled(Student, Course), \+ completed(Student, Course).
+ Expected: Multiple students (e.g., Mike for Precalculus, Lisa for Intro CS)
+Query 75
+Natural Language: What is the total number of prerequisite relationships in the Mathematics department?
+ Prolog: prerequisite(Course1, Course2), department(Course1, mathematics), department(Course2, mathematics).
+ Expected: 4 relationships (Algebra 1→2, 2→Precalc, Precalc→Calc1, Calc1→Calc2)
+Query 76
+Natural Language: What is the prerequisite chain from Intro Programming to Algorithms?
+ Prolog: prerequisite_chain(intro_programming, algorithms, Path).
+ Expected: Path = [intro_programming, intro_cs, data_structures, algorithms]
+Query 77
+Natural Language: Which students have completed all prerequisites for Data Structures but are not enrolled in it?
+ Prolog: completed(Student, intro_cs), \+ enrolled(Student, data_structures), \+ completed(Student, data_structures).
+ Expected: false (Sarah completed Intro CS but she's currently enrolled in it)
+Query 78
+Natural Language: How many courses are in the longest prerequisite chain starting from Algebra 1?
+ Prolog: prerequisite_chain(algebra_1, calculus_2, Path), length(Path, N).
+ Expected: N = 5 (Algebra 1 → Algebra 2 → Precalculus → Calculus 1 → Calculus 2)
+Query 79
+Natural Language: Which students are enrolled in both Science and Mathematics courses?
+ Prolog: enrolled(Student, C1), enrolled(Student, C2), department(C1, science), department(C2, mathematics), C1 \= C2.
+ Expected: Student = sarah (Biology 2 and Calculus 1)
+Query 80
+Natural Language: What courses can Emily take after completing Precalculus?
+ Prolog: completed(emily, precalculus), eligible(emily, Course).
+ Expected: Multiple courses including Calculus 1 (after completing current enrollment)
+Query 81
+Natural Language: Are there any students who are peers with both Sarah and Mike?
+ Prolog: peers(Student, sarah), peers(Student, mike).
+ Expected: false (no student shares courses with both)
+Query 82
+Natural Language: What is the shortest path for Lisa to become eligible for Calculus 1?
+ Prolog: prerequisite_chain(algebra_1, calculus_1, Path).
+ Expected: Path = [algebra_1, algebra_2, precalculus, calculus_1]
+Query 83
+Natural Language: Which students have completed at least one intermediate course?
+ Prolog: completed(Student, Course), difficulty(Course, intermediate).
+ Expected: Student = sarah; Student = emily; Student = james
+Query 84
+Natural Language: How many prerequisite relationships exist in the Science department?
+ Prolog: prerequisite(C1, C2), department(C1, science), department(C2, science).
+ Expected: 3 (Biology 1→2, Chemistry 1→2, Physics 1→2)
+Query 85
+Natural Language: If James completes Data Structures, what advanced courses become available to him?
+ Prolog: completed(james, data_structures), difficulty(Course, advanced), eligible(james, Course).
+ Expected: Algorithms (he already has access to Calculus 2)
+Query 86
+Natural Language: Which students are taking courses only from one department?
+ Prolog: enrolled(Student, _), \+ (enrolled(Student, C1), enrolled(Student, C2), department(C1, D1), department(C2, D2), D1 \= D2).
+ Expected: Lisa (only taking courses from 2 departments: Math and Science)
+Query 87
+Natural Language: What is the prerequisite chain from Biology 1 to Biology 2?
+ Prolog: prerequisite_chain(biology_1, biology_2, Path).
+ Expected: Path = [biology_1, biology_2]
+Query 88
+Natural Language: Which students can become advanced students by completing just one more course?
+ Prolog: enrolled(Student, Course), difficulty(Course, advanced), \+ advanced_student(Student).
+ Expected: Student = sarah (taking Calculus 1)
+Query 89
+Natural Language: Are there any pairs of students who are peers in multiple courses?
+ Prolog: peers(S1, S2), enrolled(S1, C1), enrolled(S2, C1), enrolled(S1, C2), enrolled(S2, C2), C1 \= C2.
+ Expected: false (no two students share multiple courses)
+Query 90
+Natural Language: What percentage of all courses are advanced level?
+ Prolog: findall(C, difficulty(C, advanced), Advanced), length(Advanced, NA), findall(C, difficulty(C, _), All), length(All, NTotal).
+ Expected: NA = 4, NTotal = 15, Percentage = 26.7%
