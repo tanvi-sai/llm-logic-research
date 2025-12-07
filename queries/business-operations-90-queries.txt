@@ -1,0 +1,368 @@
+SIMPLE QUERIES (1-30)
+Direct fact lookups from the knowledge base
+Query 1
+Natural Language: Did Alice purchase a laptop?
+ Prolog: purchased(alice, laptop).
+ Expected: true
+Query 2
+Natural Language: Is Bob a gold loyalty member?
+ Prolog: loyalty_member(bob, gold).
+ Expected: false
+Query 3
+Natural Language: What category is a smartphone in?
+ Prolog: category(smartphone, X).
+ Expected: X = electronics
+Query 4
+Natural Language: Is the tablet in stock?
+ Prolog: in_stock(tablet).
+ Expected: true
+Query 5
+Natural Language: How much does a laptop cost?
+ Prolog: price(laptop, X).
+ Expected: X = 1200
+Query 6
+Natural Language: Is Carol a loyalty member?
+ Prolog: loyalty_member(carol, _).
+ Expected: true
+Query 7
+Natural Language: Are laptop and mouse compatible?
+ Prolog: compatible(laptop, mouse).
+ Expected: true
+Query 8
+Natural Language: What is Emily's budget tier?
+ Prolog: budget_tier(emily, X).
+ Expected: X = budget
+Query 9
+Natural Language: Did Frank purchase wireless earbuds?
+ Prolog: purchased(frank, wireless_earbuds).
+ Expected: true
+Query 10
+Natural Language: What products did Alice purchase?
+ Prolog: purchased(alice, X).
+ Expected: X = laptop; X = mouse; X = warranty_plan
+Query 11
+Natural Language: Is the warranty plan a service?
+ Prolog: category(warranty_plan, services).
+ Expected: true
+Query 12
+Natural Language: Is David a premium budget tier customer?
+ Prolog: budget_tier(david, premium).
+ Expected: false
+Query 13
+Natural Language: What is the price of a phone case?
+ Prolog: price(phone_case, X).
+ Expected: X = 25
+Query 14
+Natural Language: Is the smartwatch out of stock?
+ Prolog: out_of_stock(smartwatch).
+ Expected: true
+Query 15
+Natural Language: Did Carol buy a stylus?
+ Prolog: purchased(carol, stylus).
+ Expected: true
+Query 16
+Natural Language: What loyalty level is Alice?
+ Prolog: loyalty_member(alice, X).
+ Expected: X = gold
+Query 17
+Natural Language: Is cloud storage compatible with tablets?
+ Prolog: compatible(tablet, cloud_storage).
+ Expected: true
+Query 18
+Natural Language: What products are accessories?
+ Prolog: category(X, accessories).
+ Expected: X = mouse; X = phone_case; X = stylus; X = charging_dock; X = external_monitor
+Query 19
+Natural Language: Did Bob purchase in February?
+ Prolog: purchased_month(bob, _, february).
+ Expected: true
+Query 20
+Natural Language: Is the external monitor in stock?
+ Prolog: in_stock(external_monitor).
+ Expected: false
+Query 21
+Natural Language: What is Frank's loyalty status?
+ Prolog: loyalty_member(frank, X).
+ Expected: X = bronze
+Query 22
+Natural Language: How much does cloud storage cost?
+ Prolog: price(cloud_storage, X).
+ Expected: X = 120
+Query 23
+Natural Language: Is smartphone compatible with phone case?
+ Prolog: compatible(smartphone, phone_case).
+ Expected: true
+Query 24
+Natural Language: What did David purchase?
+ Prolog: purchased(david, X).
+ Expected: X = laptop; X = external_monitor
+Query 25
+Natural Language: Is wireless earbuds an electronics product?
+ Prolog: category(wireless_earbuds, electronics).
+ Expected: true
+Query 26
+Natural Language: When did Alice buy the mouse?
+ Prolog: purchased_month(alice, mouse, X).
+ Expected: X = january
+Query 27
+Natural Language: Is Carol in the mid-range budget tier?
+ Prolog: budget_tier(carol, mid_range).
+ Expected: false
+Query 28
+Natural Language: What is the price of a stylus?
+ Prolog: price(stylus, X).
+ Expected: X = 80
+Query 29
+Natural Language: Did Emily purchase a smartwatch?
+ Prolog: purchased(emily, smartwatch).
+ Expected: true
+Query 30
+Natural Language: Are wireless earbuds and charging dock compatible?
+ Prolog: compatible(wireless_earbuds, charging_dock).
+ Expected: true
+
+COMPLEX QUERIES (31-60)
+Requires applying rules from the knowledge base
+Query 31
+Natural Language: Is Alice a high-value customer?
+ Prolog: high_value_customer(alice).
+ Expected: true (gold member)
+Query 32
+Natural Language: Did Bob buy anything from the electronics category?
+ Prolog: bought_category(bob, electronics).
+ Expected: true (bought smartphone)
+Query 33
+Natural Language: Is David eligible for a discount?
+ Prolog: eligible_for_discount(david).
+ Expected: false (bronze member)
+Query 34
+Natural Language: What cross-sell opportunities exist for Alice?
+ Prolog: cross_sell_opportunity(alice, X).
+ Expected: X = external_monitor
+Query 35
+Natural Language: Is Carol a high spender?
+ Prolog: high_spender(carol).
+ Expected: true (spent 800 total)
+Query 36
+Natural Language: Are Alice and Bob similar customers?
+ Prolog: similar_customers(alice, bob).
+ Expected: true (both bought electronics)
+Query 37
+Natural Language: Is the laptop a premium product?
+ Prolog: premium_product(laptop).
+ Expected: true (price > 500)
+Query 38
+Natural Language: Is Frank a repeat customer?
+ Prolog: repeat_customer(frank).
+ Expected: true (bought 2 items)
+Query 39
+Natural Language: Did Emily purchase recently?
+ Prolog: recent_buyer(emily).
+ Expected: true (purchased in May)
+Query 40
+Natural Language: Is the phone case a budget product?
+ Prolog: budget_product(phone_case).
+ Expected: true (price < 100)
+Query 41
+Natural Language: What products can be recommended to Bob?
+ Prolog: recommended_product(bob, X).
+ Expected: X = wireless_earbuds (compatible with smartphone and in stock)
+Query 42
+Natural Language: Is Emily eligible for a discount?
+ Prolog: eligible_for_discount(emily).
+ Expected: true (silver member)
+Query 43
+Natural Language: What upsell opportunities exist for Carol?
+ Prolog: upsell_candidate(carol, X).
+ Expected: X = laptop; X = smartphone
+Query 44
+Natural Language: Is David at churn risk?
+ Prolog: churn_risk(david).
+ Expected: false (is recent buyer - purchased in April/May)
+Query 45
+Natural Language: Is Alice a VIP customer?
+ Prolog: vip_customer(alice).
+ Expected: true (gold member AND high spender)
+Query 46
+Natural Language: What products form a bundle with laptop?
+ Prolog: product_bundle(laptop, X).
+ Expected: X = mouse; X = external_monitor; X = warranty_plan
+Query 47
+Natural Language: Does Carol prefer the electronics category?
+ Prolog: prefers_category(carol, electronics).
+ Expected: true (bought tablet from electronics)
+Query 48
+Natural Language: Is Frank at churn risk?
+ Prolog: churn_risk(frank).
+ Expected: false (is recent buyer - purchased in June)
+Query 49
+Natural Language: What is Bob's customer value tier?
+ Prolog: customer_value_tier(bob, X).
+ Expected: X = low (not high spender)
+Query 50
+Natural Language: Are there cross-sell opportunities for David?
+ Prolog: cross_sell_opportunity(david, X).
+ Expected: X = mouse; X = warranty_plan
+Query 51
+Natural Language: Is the smartphone a premium product?
+ Prolog: premium_product(smartphone).
+ Expected: true (price > 500)
+Query 52
+Natural Language: Did Alice buy from the accessories category?
+ Prolog: bought_category(alice, accessories).
+ Expected: true (bought mouse)
+Query 53
+Natural Language: Is the charging dock a budget product?
+ Prolog: budget_product(charging_dock).
+ Expected: true (price < 100)
+Query 54
+Natural Language: What is Alice's customer value tier?
+ Prolog: customer_value_tier(alice, X).
+ Expected: X = high (VIP customer)
+Query 55
+Natural Language: Are Carol and David similar customers?
+ Prolog: similar_customers(carol, david).
+ Expected: true (both bought electronics)
+Query 56
+Natural Language: Is Emily a repeat customer?
+ Prolog: repeat_customer(emily).
+ Expected: false (only bought 1 item)
+Query 57
+Natural Language: What products should be restocked as priority?
+ Prolog: restock_priority(X).
+ Expected: X = external_monitor; X = warranty_plan; X = cloud_storage
+Query 58
+Natural Language: Is Bob a high spender?
+ Prolog: high_spender(bob).
+ Expected: false (spent 825 total, but threshold is > 1000)
+Query 59
+Natural Language: Are there upsell opportunities for Emily?
+ Prolog: upsell_candidate(emily, X).
+ Expected: false (budget tier customer)
+Query 60
+Natural Language: What is Carol's next best action?
+ Prolog: next_best_action(carol, X).
+ Expected: X = recommend(_) for compatible products in stock
+
+MULTI-STEP QUERIES (61-90)
+Requires multiple rule applications and complex logic
+Query 61
+Natural Language: Which customers are both high-value and high spenders?
+ Prolog: high_value_customer(X), high_spender(X).
+ Expected: X = alice; X = carol
+Query 62
+Natural Language: What electronics products did gold members purchase?
+ Prolog: loyalty_member(X, gold), purchased(X, Product), category(Product, electronics).
+ Expected: X = alice, Product = laptop; X = carol, Product = tablet
+Query 63
+Natural Language: Which premium products are currently out of stock?
+ Prolog: premium_product(X), out_of_stock(X).
+ Expected: X = smartwatch
+Query 64
+Natural Language: How many products has each customer purchased?
+ Prolog: findall(P, purchased(Customer, P), Products), length(Products, Count).
+ Expected: alice = 3, bob = 2, carol = 3, david = 2, emily = 1, frank = 2
+Query 65
+Natural Language: Which customers bought products in the same month as Alice?
+ Prolog: purchased_month(alice, _, Month), purchased_month(X, _, Month), X \= alice.
+ Expected: X = bob (february)
+Query 66
+Natural Language: What is the average price of products purchased by Carol?
+ Prolog: findall(Price, (purchased(carol, P), price(P, Price)), Prices), sum_list(Prices, Sum), length(Prices, Count), Avg is Sum / Count.
+ Expected: Avg = 266.67 (600 + 80 + 120 = 800 / 3)
+Query 67
+Natural Language: Which customers are eligible for discounts but are at churn risk?
+ Prolog: eligible_for_discount(X), churn_risk(X).
+ Expected: false (no customers meet both criteria)
+Query 68
+Natural Language: What percentage of products are currently in stock?
+ Prolog: findall(P, in_stock(P), InStock), length(InStock, IS), findall(P, (in_stock(P); out_of_stock(P)), All), length(All, Total), Percentage is (IS / Total) * 100.
+ Expected: 58.3% (7 out of 12 products)
+Query 69
+Natural Language: Which customers have cross-sell opportunities for accessories?
+ Prolog: cross_sell_opportunity(X, Product), category(Product, accessories).
+ Expected: X = alice (external_monitor), X = david (mouse)
+Query 70
+Natural Language: What is the total revenue from electronics products?
+ Prolog: findall(Price, (purchased(_, P), category(P, electronics), price(P, Price)), Prices), sum_list(Prices, Total).
+ Expected: Total = 4000 (laptop + laptop + smartphone + tablet + smartwatch)
+Query 71
+Natural Language: Which customers bought compatible products together?
+ Prolog: purchased(X, P1), purchased(X, P2), compatible(P1, P2), P1 \= P2.
+ Expected: X = alice (laptop + mouse), X = bob (smartphone + phone_case), X = carol (tablet + stylus), X = frank (wireless_earbuds + charging_dock)
+Query 72
+Natural Language: What is the most expensive product purchased by budget tier customers?
+ Prolog: budget_tier(X, budget), purchased(X, P), price(P, Price), findall(Pr, (budget_tier(C, budget), purchased(C, Prod), price(Prod, Pr)), Prices), max_list(Prices, MaxPrice), Price = MaxPrice.
+ Expected: P = smartwatch, Price = 400
+Query 73
+Natural Language: Which loyalty tiers have the highest average spending?
+ Prolog: loyalty_member(X, Tier), findall(Price, (loyalty_member(X, Tier), purchased(X, P), price(P, Price)), Prices), sum_list(Prices, Sum), length(Prices, Count), Avg is Sum / Count.
+ Expected: gold (highest), silver (middle), bronze (lowest)
+Query 74
+Natural Language: How many customers bought from multiple categories?
+ Prolog: findall(X, (bought_category(X, C1), bought_category(X, C2), C1 \= C2), Customers), list_to_set(Customers, UniqueCustomers), length(UniqueCustomers, Count).
+ Expected: Count = 3 (alice, carol, david)
+Query 75
+Natural Language: Which products have no compatible items?
+ Prolog: (in_stock(P); out_of_stock(P)), \+ compatible(P, _), \+ compatible(_, P).
+ Expected: false (all products have compatible items)
+Query 76
+Natural Language: What is the conversion rate of cross-sell opportunities (recommended products purchased)?
+ Prolog: findall(1, (cross_sell_opportunity(C, P), purchased(C, P)), Conversions), length(Conversions, Conv), findall(1, cross_sell_opportunity(_, _), All), length(All, Total), Rate is (Conv / Total) * 100.
+ Expected: 0% (no cross-sell opportunities were converted)
+Query 77
+Natural Language: Which customers purchased all compatible accessories for their main product?
+ Prolog: purchased(X, Main), category(Main, electronics), findall(Acc, (compatible(Main, Acc), category(Acc, accessories)), PossibleAcc), findall(Acc, (purchased(X, Acc), compatible(Main, Acc)), BoughtAcc), length(PossibleAcc, PLen), length(BoughtAcc, BLen), PLen = BLen.
+ Expected: X = alice (bought mouse for laptop)
+Query 78
+Natural Language: What is the distribution of customers across loyalty tiers?
+ Prolog: findall(Tier, loyalty_member(_, Tier), Tiers), msort(Tiers, Sorted).
+ Expected: [bronze, bronze, gold, gold, silver, silver]
+Query 79
+Natural Language: Which month had the highest purchase volume?
+ Prolog: findall(Month, purchased_month(_, _, Month), Months), msort(Months, Sorted).
+ Expected: february, march, april (tie with 2-3 purchases each)
+Query 80
+Natural Language: What products were purchased by VIP customers?
+ Prolog: vip_customer(X), purchased(X, Product).
+ Expected: X = alice, Product = laptop/mouse/warranty_plan; X = carol, Product = tablet/stylus/cloud_storage
+Query 81
+Natural Language: Which budget tier customers bought premium products?
+ Prolog: budget_tier(X, budget), purchased(X, P), premium_product(P).
+ Expected: false (budget customers didn't buy premium products)
+Query 82
+Natural Language: What is the ratio of electronics to accessories purchases?
+ Prolog: findall(1, (purchased(_, P), category(P, electronics)), Elec), length(Elec, ECount), findall(1, (purchased(_, P), category(P, accessories)), Acc), length(Acc, ACount), Ratio is ECount / ACount.
+ Expected: Ratio = 0.83 (5 electronics / 6 accessories)
+Query 83
+Natural Language: Which customers have product affinity patterns?
+ Prolog: product_affinity(P1, P2), purchased(X, P1), purchased(X, P2).
+ Expected: Customers who bought compatible products together
+Query 84
+Natural Language: What is the average loyalty tier value (numeric mapping)?
+ Prolog: Map gold=3, silver=2, bronze=1 and calculate
+ Expected: 2.0 (average of [3,2,3,1,2,1])
+Query 85
+Natural Language: Which product category generates the most revenue?
+ Prolog: findall(Cat-Price, (purchased(_, P), category(P, Cat), price(P, Price)), CatPrices), aggregate by category and sum.
+ Expected: electronics (highest total revenue)
+Query 86
+Natural Language: How many customers bought items exclusively from one category?
+ Prolog: findall(X, (purchased(X, _), \+ (bought_category(X, C1), bought_category(X, C2), C1 \= C2)), Customers), list_to_set(Customers, Unique), length(Unique, Count).
+ Expected: Count = 3 (bob, emily, frank)
+Query 87
+Natural Language: What is the customer lifetime value ranking?
+ Prolog: findall(X-Total, (findall(Price, (purchased(X, P), price(P, Price)), Prices), sum_list(Prices, Total)), Pairs), sort(2, @>=, Pairs, Ranked).
+ Expected: Ranked list with alice and carol at top
+Query 88
+Natural Language: Which out-of-stock products have the highest demand based on compatibility?
+ Prolog: out_of_stock(P), findall(1, (purchased(_, Main), compatible(Main, P)), Demand), length(Demand, Count), Count > 1.
+ Expected: warranty_plan, external_monitor
+Query 89
+Natural Language: What percentage of repeat customers are also high spenders?
+ Prolog: findall(1, (repeat_customer(X), high_spender(X)), Both), length(Both, BCount), findall(1, repeat_customer(_), All), length(All, ACount), Percentage is (BCount / ACount) * 100.
+ Expected: 50% (2 out of 4 repeat customers)
+Query 90
+Natural Language: Which customer segments (loyalty × budget tier) exist and their purchase patterns?
+ Prolog: loyalty_member(X, L), budget_tier(X, B), findall(P, purchased(X, P), Products).
+ Expected: Multiple segments with different purchasing behaviors
