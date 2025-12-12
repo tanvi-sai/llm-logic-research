@@ -5,7 +5,7 @@ Research project integrating symbolic logic (Prolog) with LLMs to reduce halluci
 Research project integrating symbolic logic (Prolog) with Large Language Models to enhance logical reasoning and reduce hallucinations.
 
 **Author:** Tanvi Reddy Pothireddy  
-**Affiliation:** Student Research Intern  
+**Affiliation:** Student Research Intern @ UCSC
 **Date:** June 19, 2025
 
 ## 📋 Overview
@@ -301,10 +301,11 @@ If you use this code in your research, please cite:
 
 **For questions or issues:**
 - Open an issue in this repository
-- Email: [Your email here if you want to include it]
+- Email: tanvi@saimail.com
 
 **Research supervised by:**
-[Add your professor's name and contact if applicable]
+Dr. Leilani Gilpin
+lgilpin @ ucsc.edu
 
 ## 📝 License
 
