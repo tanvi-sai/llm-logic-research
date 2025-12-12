@@ -6,7 +6,6 @@ Research project integrating symbolic logic (Prolog) with Large Language Models 
 
 **Author:** Tanvi Reddy Pothireddy  
 **Affiliation:** Student Research Intern @ UCSC
-**Date:** June 19, 2025
 
 ## 📋 Overview
 
