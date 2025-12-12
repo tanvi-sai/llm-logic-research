@@ -319,7 +319,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📚 Additional Resources
 
-- [Research Paper](docs/research_paper.pdf)
 - [SWI-Prolog Documentation](https://www.swi-prolog.org/pldoc/doc_for?object=manual)
 - [OpenAI API Documentation](https://platform.openai.com/docs/overview)
 - [PySwip Documentation](https://github.com/yuce/pyswip)
