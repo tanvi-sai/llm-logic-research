@@ -292,7 +292,7 @@ If you use this code in your research, please cite:
   title={Enhancing Logical Reasoning in Large Language Models through Symbolic Logic Integration to Reduce Hallucinated Outputs},
   author={Pothireddy, Tanvi Reddy},
   year={2025},
-  institution={Student Research Intern @ UCSC}
+  institution={Student Research Intern at UCSC}
 }
 ```
 
