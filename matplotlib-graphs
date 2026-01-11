@@ -1,0 +1,311 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Set style for better-looking graphs
+plt.style.use('seaborn-v0_8-darkgrid')
+
+# Data for ACADEMICS 15 Queries (5 each) - PROLOG
+academics_15_prolog = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+    'complex': [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+    'multi-step': [100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
+}
+
+# Data for ACADEMICS 15 Queries - ChatGPT
+academics_15_chatgpt = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+    'complex': [100, 80, 80, 100, 80, 100, 100, 80, 100, 60],
+    'multi-step': [80, 80, 80, 60, 60, 100, 80, 100, 80, 60]
+}
+
+# Data for ACADEMICS 15 Queries - Gemini
+academics_15_gemini = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+    'complex': [80, 100, 100, 100, 80, 100, 100, 100, 100, 100],
+    'multi-step': [80, 80, 80, 100, 80, 100, 80, 80, 100, 100]
+}
+
+# Data for ACADEMICS 15 Queries - Anthropic
+academics_15_anthropic = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+    'complex': [100, 100, 100, 80, 100, 100, 100, 100, 100, 100],
+    'multi-step': [80, 100, 80, 100, 100, 100, 80, 80, 80, 80]
+}
+
+# Data for ACADEMICS 45 Queries (15 each) - PROLOG
+academics_45_prolog = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+    'complex': [93.3, 93.3, 93.3, 93.3, 93.3, 93.3, 93.3, 93.3, 93.3, 93.3],
+    'multi-step': [93.3, 93.3, 93.3, 93.3, 93.3, 93.3, 93.3, 93.3, 93.3, 93.3]
+}
+
+# Data for ACADEMICS 45 Queries - ChatGPT
+academics_45_chatgpt = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+    'complex': [93.3, 80, 73.3, 86.7, 66.7, 86.7, 93.3, 80, 93.3, 60],
+    'multi-step': [80, 73.3, 73.3, 60, 73.3, 86.7, 86.7, 86.7, 86.7, 60]
+}
+
+# Data for ACADEMICS 45 Queries - Gemini
+academics_45_gemini = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+    'complex': [80, 93.3, 86.7, 86.7, 80, 93.3, 86.7, 93.3, 73.3, 86.7],
+    'multi-step': [80, 73.3, 80, 93.3, 73.3, 93.3, 73.3, 93.3, 86.7, 80]
+}
+
+# Data for ACADEMICS 45 Queries - Anthropic
+academics_45_anthropic = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+    'complex': [93.3, 100, 100, 60, 100, 86.7, 86.7, 93.3, 86.7, 86.7],
+    'multi-step': [80, 93.3, 86.7, 86.7, 100, 86.7, 86.7, 80, 73.3, 80]
+}
+
+# Data for ACADEMICS 90 Queries (30 each) - PROLOG
+academics_90_prolog = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+    'complex': [96.7, 96.7, 96.7, 96.7, 96.7, 96.7, 96.7, 96.7, 96.7, 96.7],
+    'multi-step': [93.3, 93.3, 93.3, 93.3, 93.3, 93.3, 93.3, 93.3, 93.3, 93.3]
+}
+
+# Data for ACADEMICS 90 Queries - ChatGPT
+academics_90_chatgpt = {
+    'simple': [100, 100, 100, 96.7, 86.7, 100, 100, 96.7, 100, 86.7],
+    'complex': [93.3, 83.3, 80, 86.7, 73.3, 93.3, 96.7, 86.7, 96.7, 80],
+    'multi-step': [83.3, 83.3, 76.7, 70, 63.3, 83.3, 86.7, 83.3, 73.3, 73.3]
+}
+
+# Data for ACADEMICS 90 Queries - Gemini
+academics_90_gemini = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+    'complex': [80, 93.3, 93.3, 93.3, 90, 96.7, 90, 83.3, 90, 80],
+    'multi-step': [80, 76.7, 83.3, 90, 76.7, 80, 80, 70, 70, 76.7]
+}
+
+# Data for ACADEMICS 90 Queries - Anthropic
+academics_90_anthropic = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+    'complex': [93.3, 96.7, 96.7, 70, 100, 93.3, 93.3, 96.7, 93.3, 93.3],
+    'multi-step': [83.3, 90, 86.7, 76.7, 90, 80, 80, 83.3, 76.7, 80]
+}
+
+# Data for BUSINESS 15 Queries (5 each) - PROLOG
+business_15_prolog = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+    'complex': [80, 80, 80, 80, 80, 80, 80, 80, 80, 80],
+    'multi-step': [80, 80, 80, 80, 80, 80, 80, 80, 80, 80]
+}
+
+# Data for BUSINESS 15 Queries - ChatGPT
+business_15_chatgpt = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 80, 100, 100],
+    'complex': [60, 80, 80, 60, 80, 80, 100, 80, 80, 80],
+    'multi-step': [80, 60, 80, 80, 100, 80, 60, 40, 80, 60]
+}
+
+# Data for BUSINESS 15 Queries - Gemini
+business_15_gemini = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+    'complex': [80, 80, 60, 80, 60, 80, 80, 100, 60, 80],
+    'multi-step': [80, 60, 80, 40, 40, 60, 60, 60, 60, 60]
+}
+
+# Data for BUSINESS 15 Queries - Anthropic
+business_15_anthropic = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 80, 100, 100],
+    'complex': [80, 60, 60, 60, 40, 60, 60, 60, 40, 80],
+    'multi-step': [60, 40, 60, 60, 60, 60, 80, 60, 60, 80]
+}
+
+# Data for BUSINESS 45 Queries (15 each) - PROLOG
+business_45_prolog = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+    'complex': [86.7, 86.7, 86.7, 86.7, 86.7, 86.7, 86.7, 86.7, 86.7, 86.7],
+    'multi-step': [86.7, 86.7, 86.7, 86.7, 86.7, 86.7, 86.7, 86.7, 86.7, 86.7]
+}
+
+# Data for BUSINESS 45 Queries - ChatGPT
+business_45_chatgpt = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 86.7, 93.3, 93.3],
+    'complex': [80, 66.7, 86.7, 73.3, 73.3, 80, 93.3, 73.3, 86.7, 73.3],
+    'multi-step': [80, 46.7, 73.3, 60, 73.3, 66.7, 46.7, 33.3, 46.7, 66.7]
+}
+
+# Data for BUSINESS 45 Queries - Gemini
+business_45_gemini = {
+    'simple': [100, 100, 100, 93.3, 100, 100, 100, 100, 100, 100],
+    'complex': [86.7, 80, 66.7, 80, 73.3, 80, 80, 86.7, 80, 80],
+    'multi-step': [80, 60, 66.7, 46.7, 33.3, 66.7, 66.7, 53.3, 66.7, 66.7]
+}
+
+# Data for BUSINESS 45 Queries - Anthropic
+business_45_anthropic = {
+    'simple': [100, 100, 100, 93.3, 100, 100, 100, 100, 100, 100],
+    'complex': [86.7, 66.7, 66.7, 66.7, 60, 66.7, 73.3, 73.3, 66.7, 73.3],
+    'multi-step': [60, 40, 46.7, 60, 40, 60, 66.7, 60, 40, 66.7]
+}
+
+# Data for BUSINESS 90 Queries (30 each) - PROLOG
+business_90_prolog = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+    'complex': [90, 90, 90, 90, 90, 90, 90, 90, 90, 90],
+    'multi-step': [86.7, 86.7, 86.7, 86.7, 86.7, 86.7, 86.7, 86.7, 86.7, 86.7]
+}
+
+# Data for BUSINESS 90 Queries - ChatGPT
+business_90_chatgpt = {
+    'simple': [100, 100, 100, 100, 100, 100, 100, 86.7, 86.7, 86.7],
+    'complex': [86.7, 66.7, 90, 76.7, 83.3, 83.3, 90, 70, 76.7, 76.7],
+    'multi-step': [80, 50, 76.7, 56.7, 73.3, 70, 46.7, 26.7, 33.3, 40]
+}
+
+# Data for BUSINESS 90 Queries - Gemini
+business_90_gemini = {
+    'simple': [100, 100, 100, 96.7, 100, 100, 100, 100, 100, 100],
+    'complex': [83.3, 80, 73.3, 80, 76.7, 76.7, 80, 86.7, 80, 86.7],
+    'multi-step': [80, 56.7, 60, 50, 43.3, 50, 53.3, 46.7, 53.3, 46.7]
+}
+
+# Data for BUSINESS 90 Queries - Anthropic
+business_90_anthropic = {
+    'simple': [100, 100, 100, 96.7, 100, 100, 100, 100, 96.7, 100],
+    'complex': [86.7, 70, 70, 70, 66.7, 70, 80, 73.3, 70, 80],
+    'multi-step': [60, 36.7, 26.7, 53.3, 40, 43.3, 60, 56.7, 36.7, 60]
+}
+
+# Function to create a single graph
+def create_graph(data_dict, title, ylabel, max_y, filename):
+    fig, ax = plt.subplots(figsize=(10, 6))
+    x = np.arange(1, 11)
+    
+    # Colors for query types
+    colors = {'simple': 'red', 'complex': 'green', 'multi-step': 'blue'}
+    
+    # Line styles for LLMs
+    line_styles = {
+        'prolog': '-',
+        'chatgpt': ':',
+        'gemini': '--',
+        'anthropic': '-.'
+    }
+    
+    # Markers for LLMs
+    markers = {
+        'prolog': 'o',
+        'chatgpt': 's',
+        'gemini': '^',
+        'anthropic': 'D'
+    }
+    
+    # Plot all lines
+    for llm in ['prolog', 'chatgpt', 'gemini', 'anthropic']:
+        for query_type in ['simple', 'complex', 'multi-step']:
+            label = f"{llm.capitalize()} - {query_type.capitalize()}"
+            ax.plot(x, data_dict[llm][query_type], 
+                   color=colors[query_type], 
+                   linestyle=line_styles[llm], 
+                   marker=markers[llm], 
+                   markersize=6, 
+                   linewidth=2, 
+                   label=label)
+    
+    ax.set_xlabel('Experiment Number', fontsize=12)
+    ax.set_ylabel(ylabel, fontsize=12)
+    ax.set_title(title, fontsize=14, fontweight='bold')
+    ax.set_xticks(x)
+    ax.set_ylim(0, 105)
+    ax.grid(True, alpha=0.3)
+    ax.legend(loc='center left', bbox_to_anchor=(1, 0.5), fontsize=8, ncol=1)
+    
+    plt.tight_layout()
+    plt.savefig(filename, dpi=300, bbox_inches='tight')
+    plt.close()
+    print(f"Saved: {filename}")
+
+# Generate all 6 graphs
+
+# Academics 15
+academics_15_data = {
+    'prolog': academics_15_prolog,
+    'chatgpt': academics_15_chatgpt,
+    'gemini': academics_15_gemini,
+    'anthropic': academics_15_anthropic
+}
+create_graph(academics_15_data, 
+            'Academic Queries (15 Total: 5 Simple, 5 Complex, 5 Multi-step)', 
+            'Accuracy (out of 5)', 
+            105, 
+            'academics_15_queries.png')
+
+# Academics 45
+academics_45_data = {
+    'prolog': academics_45_prolog,
+    'chatgpt': academics_45_chatgpt,
+    'gemini': academics_45_gemini,
+    'anthropic': academics_45_anthropic
+}
+create_graph(academics_45_data, 
+            'Academic Queries (45 Total: 15 Simple, 15 Complex, 15 Multi-step)', 
+            'Accuracy (out of 15)', 
+            105, 
+            'academics_45_queries.png')
+
+# Academics 90
+academics_90_data = {
+    'prolog': academics_90_prolog,
+    'chatgpt': academics_90_chatgpt,
+    'gemini': academics_90_gemini,
+    'anthropic': academics_90_anthropic
+}
+create_graph(academics_90_data, 
+            'Academic Queries (90 Total: 30 Simple, 30 Complex, 30 Multi-step)', 
+            'Accuracy (out of 30)', 
+            105, 
+            'academics_90_queries.png')
+
+# Business 15
+business_15_data = {
+    'prolog': business_15_prolog,
+    'chatgpt': business_15_chatgpt,
+    'gemini': business_15_gemini,
+    'anthropic': business_15_anthropic
+}
+create_graph(business_15_data, 
+            'Business Queries (15 Total: 5 Simple, 5 Complex, 5 Multi-step)', 
+            'Accuracy (out of 5)', 
+            105, 
+            'business_15_queries.png')
+
+# Business 45
+business_45_data = {
+    'prolog': business_45_prolog,
+    'chatgpt': business_45_chatgpt,
+    'gemini': business_45_gemini,
+    'anthropic': business_45_anthropic
+}
+create_graph(business_45_data, 
+            'Business Queries (45 Total: 15 Simple, 15 Complex, 15 Multi-step)', 
+            'Accuracy (out of 15)', 
+            105, 
+            'business_45_queries.png')
+
+# Business 90
+business_90_data = {
+    'prolog': business_90_prolog,
+    'chatgpt': business_90_chatgpt,
+    'gemini': business_90_gemini,
+    'anthropic': business_90_anthropic
+}
+create_graph(business_90_data, 
+            'Business Queries (90 Total: 30 Simple, 30 Complex, 30 Multi-step)', 
+            'Accuracy (out of 30)', 
+            105, 
+            'business_90_queries.png')
+
+print("\nAll 6 graphs generated successfully!")
+print("Files saved:")
+print("- academics_15_queries.png")
+print("- academics_45_queries.png")
+print("- academics_90_queries.png")
+print("- business_15_queries.png")
+print("- business_45_queries.png")
+print("- business_90_queries.png")
